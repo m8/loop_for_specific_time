@@ -9,10 +9,10 @@
 #define NDEBUG
 
 #define ERROR_MARGIN 1/100
-#define SAMPLE_SIZE 10
+#define SAMPLE_SIZE 100
 
 std::vector<uint64_t> 
-RUN_FOR_US = {10};
+RUN_FOR_US = {1,10,100,1000};
 
 void test_1(uint64_t _us_to_run)
 {
@@ -36,7 +36,8 @@ void test_1(uint64_t _us_to_run)
     } while (!(num_epoch == j && final_epoch == i));
     uint64_t END_TIME = timers::rdtsc();
 
-    std::printf("[Test 1]: Performance (ito cc): %d\n", END_TIME - START_TIME - estimate_rdtsc_latency());
+    log::print("[Test %d]: Performance (ito cc): %d\n", 3,
+                1, _us_to_run, END_TIME - START_TIME - estimate_rdtsc_latency());
 }
 
 void test_2(uint64_t _us_to_run)
@@ -56,7 +57,8 @@ void test_2(uint64_t _us_to_run)
     } while (i < _ns_to_run);
     uint64_t END_TIME = timers::rdtsc();
 
-    std::printf("[Test 2]: Performance (ito cc): %d\n", END_TIME - START_TIME - estimate_rdtsc_latency());
+    log::print("[Test %d - %d]: Performance (ito cc): %d\n", 3,
+                2, _us_to_run, END_TIME - START_TIME - estimate_rdtsc_latency());
 }
 
 int main()
