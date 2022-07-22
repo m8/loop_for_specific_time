@@ -1,8 +1,8 @@
 CC_FLAGS=-Wall -Wformat=0
 
-all: clear compile run
-build: clear compile
-cycler: clear compile-cycler run-cycler
+all: clean compile run
+build: clean compile
+cycler: clean compile-cycler run-cycler
 
 compile: compile-tester compile-cycler
 
@@ -18,5 +18,5 @@ run:
 run-cycler:
 	./cycler.bin
 
-clear:
+clean:
 	$(RM) tester.bin cycler.bin
