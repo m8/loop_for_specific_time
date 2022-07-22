@@ -8,7 +8,7 @@ compile:
 	g++ $(CC_FLAGS) clock-cycler.cc -o cycler.bin -lrt	
 
 run:
-	./tester
+	./tester.bin
 
 clear:
 	$(RM) tester.bin cycler.bin
