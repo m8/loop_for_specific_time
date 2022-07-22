@@ -12,7 +12,7 @@
 #define SAMPLE_SIZE 100
 
 std::vector<uint64_t> 
-RUN_FOR_US = {1,10,100,1000};
+RUN_FOR_US = {1,5,10,100,250,500,1000,2000,5000,10000};
 
 void test_1(uint64_t _us_to_run)
 {

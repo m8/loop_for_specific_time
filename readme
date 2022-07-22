@@ -1,3 +1,8 @@
 run loop for specific time
 =========================
+various experiments ...
+
+generation configs:
+- schedule_delta: 5000 / estimate_clock_speed()
+- magic: 1.4
 
